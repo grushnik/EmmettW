@@ -1,15 +1,21 @@
 const gallery = document.getElementById("gallery");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-function displayArt(items) {
+function displayArtworks(filter = "all") {
   gallery.innerHTML = "";
 
-  items.forEach(art => {
+  const filteredArtworks =
+    filter === "all"
+      ? artworks
+      : artworks.filter((art) => art.theme === filter);
+
+  filteredArtworks.forEach((art) => {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "art-card";
 
     card.innerHTML = `
-      <img src="${art.image}" alt="${art.title}">
-      <div class="card-content">
+      <img src="${art.image}" alt="${art.title}" class="art-image">
+      <div class="art-info">
         <h2>${art.title}</h2>
         <p class="date">${art.date}</p>
         <p>${art.note}</p>
@@ -21,12 +27,14 @@ function displayArt(items) {
   });
 }
 
-function filterArt(theme) {
-  if (theme === "all") {
-    displayArt(artworks);
-  } else {
-    displayArt(artworks.filter(art => art.theme === theme));
-  }
-}
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
 
-displayArt(artworks);
+    const filter = button.dataset.filter;
+    displayArtworks(filter);
+  });
+});
+
+displayArtworks();
