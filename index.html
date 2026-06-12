@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emmy Art Archive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Emmy Art Archive</h1>
+    <p>A little museum of Emmett’s childhood art</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <button onclick="filterArt('all')">All</button>
+      <button onclick="filterArt('holiday')">Holidays</button>
+      <button onclick="filterArt('school')">School</button>
+      <button onclick="filterArt('animals')">Animals</button>
+      <button onclick="filterArt('family')">Family</button>
+      <button onclick="filterArt('drawing')">Drawings</button>
+    </section>
+
+    <section id="gallery" class="gallery"></section>
+  </main>
+
+  <footer>
+    <p>Made with love for Emmett 💛</p>
+  </footer>
+
+  <script src="art.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
