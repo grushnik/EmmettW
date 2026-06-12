@@ -88,3 +88,153 @@ footer {
   padding: 30px;
   background: #ffe8a3;
 }
+
+#gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.art-viewer {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 0.35s ease;
+}
+
+.art-page {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  padding: 28px;
+  width: 90%;
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.image-wrap {
+  background: #f7f1e8;
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.art-image {
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.art-info h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.date {
+  color: #777;
+  font-size: 18px;
+}
+
+.note {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.counter {
+  color: #999;
+  font-size: 16px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 16px;
+  background: #d9f99d;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 15px;
+}
+
+.nav-arrow {
+  border: none;
+  background: #f0a12f;
+  color: white;
+  font-size: 54px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nav-arrow:hover {
+  transform: scale(1.08);
+}
+
+.filter-btn.active {
+  background: #2d3748;
+  color: white;
+}
+
+.art-viewer.school .art-page {
+  border: 8px solid #f7d774;
+}
+
+.art-viewer.animals .art-page {
+  border: 8px solid #9be7a5;
+}
+
+.art-viewer.holiday .art-page {
+  border: 8px solid #f4a5a5;
+}
+
+.art-viewer.family .art-page {
+  border: 8px solid #f7b7d2;
+}
+
+.art-viewer.drawing .art-page {
+  border: 8px solid #a7c7ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .art-page {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-arrow {
+    width: 52px;
+    height: 52px;
+    font-size: 40px;
+  }
+
+  .image-wrap {
+    min-height: 360px;
+  }
+
+  .art-image {
+    max-height: 360px;
+  }
+}
